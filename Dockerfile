@@ -34,7 +34,7 @@ RUN octave --eval "pkg install image-2.12.0.tar.gz"
 #WORKDIR /app/Deep3DFaceReconstruction/tf_mesh_renderer/mesh_renderer/kernels/
 #RUN g++ -std=c++11 -shared rasterize_triangles_grad.cc rasterize_triangles_op.cc rasterize_triangles_impl.cc rasterize_triangles_impl.h -o rasterize_triangles_kernel.so -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -I /usr/local/lib/python3.7/dist-packages/tensorflow/include -I /usr/local/lib/python3.7/dist-packages/tensorflow/include/external/nsync/public -L /usr/local/lib/python3.7/dist-packages/tensorflow -ltensorflow_framework -O2
 RUN cd Deep3DFaceReconstruction/tf_mesh_renderer/mesh_renderer/kernels/ && g++ -std=c++11 -shared rasterize_triangles_grad.cc rasterize_triangles_op.cc rasterize_triangles_impl.cc rasterize_triangles_impl.h -o rasterize_triangles_kernel.so -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -I /usr/local/lib/python3.7/dist-packages/tensorflow/include -I /usr/local/lib/python3.7/dist-packages/tensorflow/include/external/nsync/public -L /usr/local/lib/python3.7/dist-packages/tensorflow -ltensorflow_framework -O2
-WORKDIR /app/
+#WORKDIR /app/
 
 
 
